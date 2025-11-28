@@ -24,7 +24,7 @@ const Wellcome = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 justify-center">
               <div className="flex w-40 flex-col items-end justify-end gap-2">
                 <a
                   href="https://www.trendyol.com/magaza/evalupe-m-469260?channelId=1&sst=0&adjust_t=mk12x3o_m4o2h83&adjust_tracker_limit=999999999&utm_term=3515500&link_userID=3515500&adjust_creative=469260&utm_campaign=469260&utm_medium=android_sellerstore_free&adjust_adgroup=3515500&link_sellerid=469260&adjust_campaign=android_sellerstore_free_2025112716_TR&utm_source=share"
@@ -49,7 +49,7 @@ const Wellcome = () => {
                   <img
                     src={instagramLogo}
                     alt="Instagram"
-                    className="w-full h-auto object-contain"
+                    className="w-full h-auto object-contain pt-4"
                   />
                 </a>
               </div>

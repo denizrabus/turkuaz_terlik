@@ -12,9 +12,9 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-6">
       <div className="container mx-auto max-w-6xl px-6 lg:px-0">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Sol taraf - Adres ve İletişim */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 text-center md:text-left">
             <a
               href={googleMapsUrl}
               target="_blank"
