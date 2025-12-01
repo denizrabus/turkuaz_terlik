@@ -1,7 +1,6 @@
-import { FaInstagram } from "react-icons/fa";
 import trendyolLogo from "../assets/svg/trendyol.svg";
 import instagramLogo from "../assets/svg/instagram.svg";
-
+import BannerImage from "../assets/images/banner/banner.jpeg";
 const Wellcome = () => {
   return (
     <section
@@ -57,7 +56,7 @@ const Wellcome = () => {
           </div>
           <div className="relative">
             <img
-              src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&h=600&fit=crop"
+              src={BannerImage}
               alt="Hakkımızda"
               className="w-full h-auto rounded-lg shadow-lg"
             />
