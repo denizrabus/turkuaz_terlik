@@ -2,6 +2,7 @@ import { useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Captions from "yet-another-react-lightbox/plugins/captions";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "yet-another-react-lightbox/plugins/captions.css";
@@ -54,8 +55,17 @@ const ImageLightbox = ({ images, thumbnails, categoryTitle, onOpen, onClose }) =
         close={handleClose}
         index={index}
         slides={slides}
-        plugins={[Thumbnails, Captions]}
+        plugins={[Thumbnails, Captions, Zoom]}
         carousel={{ finite: true }}
+        zoom={{
+          maxZoomPixelRatio: 3,
+          zoomInMultiplier: 2,
+          doubleTapDelay: 300,
+          doubleClickDelay: 300,
+          doubleClickMaxStops: 2,
+          pinchToZoom: true,
+          scrollToZoom: true,
+        }}
         thumbnails={{
           position: "bottom",
           width: 120,
