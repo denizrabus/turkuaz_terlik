@@ -21,8 +21,9 @@ export const loadCategoryImages = (categoryPath) => {
   try {
     // Vite'nin import.meta.glob statik string gerektirir
     // Tüm görselleri yükleyip kategoriye göre filtreliyoruz
+    // Sadece WebP dosyalarını yükle (optimize edilmiş görseller)
     const allImages = import.meta.glob(
-      "/src/assets/images/**/*.{jpg,jpeg,png,webp}",
+      "/src/assets/images/**/*.webp",
       { eager: true }
     );
 
