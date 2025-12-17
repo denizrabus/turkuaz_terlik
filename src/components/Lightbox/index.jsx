@@ -76,7 +76,7 @@ const ImageLightbox = ({ images, thumbnails, categoryTitle, onOpen, onClose }) =
           gap: 4,
           mobileWidth: 60,
           mobileHeight: 45,
-          mobileGap: 2,
+          mobileGap: 1, // Mobilde daha az boşluk
         }}
         captions={{
           descriptionTextAlign: "center",
