@@ -1,6 +1,6 @@
 import trendyolLogo from "../assets/svg/trendyol.svg";
 import instagramLogo from "../assets/svg/instagram.svg";
-import BannerImage from "../assets/images/banner/banner.WebP";
+import BannerImage from "../assets/images/banner/banner.webp";
 const Wellcome = () => {
   return (
     <section
