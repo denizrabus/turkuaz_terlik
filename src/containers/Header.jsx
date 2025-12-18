@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import logo from "../assets/svg/turkuaz-logo.svg";
-import evalupeLogo from "../assets/svg/evalupe-logo.png";
+import evalupeLogo from "../assets/svg/evalupe-logo.webp";
 
 const Header = () => {
   const location = useLocation();
@@ -67,11 +67,7 @@ const Header = () => {
             className="text-2xl md:text-3xl font-bold text-black tracking-tight hover:opacity-80 transition-opacity"
             onClick={handleLinkClick}
           >
-            <img
-              src={evalupeLogo}
-              alt="evalupe"
-              className="w-full h-20 object-contain"
-            />
+            <img src={evalupeLogo} alt="evalupe" className="w-32 h-auto" />
           </Link>
           {/* Mobile/Tablet Hamburger Button */}
           <button

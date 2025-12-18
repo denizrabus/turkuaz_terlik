@@ -6,9 +6,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const IMAGES_DIR = path.join(__dirname, '../src/assets/images');
+const IMAGES_DIR = path.join(__dirname, '../src/assets/svg');
 const QUALITY = 85; // WebP kalite (80-90 arası önerilir)
 const BACKUP_SUFFIX = '_original';
+const MAX_DIMENSION = 16383; // WebP maksimum boyut limiti
+const MAX_WIDTH = 2000; // Maksimum genişlik (piksel)
+const MAX_HEIGHT = 2000; // Maksimum yükseklik (piksel)
 
 // Desteklenen formatlar
 const SUPPORTED_FORMATS = ['.jpg', '.jpeg', '.png'];
@@ -18,7 +21,23 @@ async function optimizeImage(inputPath, outputPath) {
     const stats = await fs.stat(inputPath);
     const originalSize = stats.size;
 
-    await sharp(inputPath)
+    // Görselin boyutlarını al
+    const metadata = await sharp(inputPath).metadata();
+    const { width, height } = metadata;
+
+    // Eğer görsel çok büyükse, resize et
+    let sharpInstance = sharp(inputPath);
+    
+    if (width > MAX_WIDTH || height > MAX_HEIGHT) {
+      // Aspect ratio'yu koruyarak resize et
+      sharpInstance = sharpInstance.resize(MAX_WIDTH, MAX_HEIGHT, {
+        fit: 'inside',
+        withoutEnlargement: true,
+      });
+      console.log(`   📏 Boyutlandırılıyor: ${width}x${height} → max ${MAX_WIDTH}x${MAX_HEIGHT}`);
+    }
+
+    await sharpInstance
       .webp({ quality: QUALITY })
       .toFile(outputPath);
 

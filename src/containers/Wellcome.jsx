@@ -1,13 +1,17 @@
 import trendyolLogo from "../assets/svg/trendyol.svg";
 import instagramLogo from "../assets/svg/instagram.svg";
 import BannerImage from "../assets/images/banner/banner.webp";
+import Sertifika1 from "../assets/images/sertifikalar/amfori.webp";
+import Sertifika2 from "../assets/images/sertifikalar/bsci.webp";
+import Sertifika3 from "../assets/images/sertifikalar/walt-disney.webp";
+import Sertifika4 from "../assets/images/sertifikalar/sedex.webp";
 const Wellcome = () => {
   return (
     <section
       id="hakkimizda"
-      className="bg-gray-50 pt-[var(--header-spacer)] pb-12 lg:pb-0 flex items-center flex-grow"
+      className="bg-gray-50 pt-[var(--header-spacer)] min-h-[calc(100vh-var(--header-spacer))] flex flex-col"
     >
-      <div className="container pt-12 lg:pt-0 mx-auto max-w-6xl px-6 lg:px-0 w-full">
+      <div className="container pt-12  mx-auto max-w-6xl px-6 lg:px-0 w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col">
             <div className="flex flex-col gap-4">
@@ -60,6 +64,43 @@ const Wellcome = () => {
               alt="Hakkımızda"
               className="w-full h-auto rounded-lg shadow-lg"
             />
+          </div>
+        </div>
+
+        {/* Sertifikalar Bölümü */}
+        <div className="mt-16 py-12 border-t border-gray-200">
+          <h3 className="text-2xl md:text-3xl font-bold text-black mb-8 text-center">
+            Sertifikalarımız
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+            <div className="bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow duration-300">
+              <img
+                src={Sertifika1}
+                alt="Sertifika 1"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow duration-300">
+              <img
+                src={Sertifika2}
+                alt="Sertifika 2"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow duration-300">
+              <img
+                src={Sertifika3}
+                alt="Sertifika 3"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-3 md:p-4 hover:shadow-lg transition-shadow duration-300">
+              <img
+                src={Sertifika4}
+                alt="Sertifika 4"
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </div>
